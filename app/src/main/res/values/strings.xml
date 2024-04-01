@@ -8,7 +8,7 @@
     <string name="tentang_aplikasi">Tentang Aplikasi</string>
     <string name="kembali">Kembali</string>
     <string name="bagikan">Bagikan</string>
-    <string name="bagikan_template">Berat badan: %1$s kg\nTinggi badan: %2$s cm\n Jenis Kelamin: %3$s\n\n BMI: %4.2f\n%5$s</string>
-    <string name="copyright">Hitung BMI merupakan sebuah apliksi Android untuk menghitung body mass index (BMI) sehingga seseorang dapat mengetahui apaka berat badanya ideal, gemuk atau kurus.\n\nAplikasi ini dibuat untuk kelas Mobpro 1.\n\n Copyright © 2024 Arfion Rizki Diotama\nAll rights reserved.</string>
+    <string name="notification_empty_payment">Harus di isi</string>
+    <string name="copyright">Aplikasi ini adalah sebuah kalkulator bensin sederhana yang memungkinkan pengguna untuk menghitung jumlah liter bensin yang dapat dibeli berdasarkan jumlah pembayaran yang mereka masukkan. Dengan aplikasi ini, pengguna dapat memilih jenis bensin yang ingin mereka beli (misalnya, Pertamax atau Pertalite) dan memasukkan jumlah pembayaran dalam rupiah.\n\nAplikasi ini dibuat untuk Assessment 1 Mobpro 1.\n\n Copyright © 2024 Arfion Rizki Diotama\nAll rights reserved.</string>
 
 </resources>
