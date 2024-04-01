@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Menghitung Liter Bensin</string>
+    <string name="select_gas_type">Pilih jenis bensin:</string>
+    <string name="payment_label">Pembayaran (Rp)</string>
+    <string name="calculate_button">Hitung</string>
+    <string name="result_prefix">Anda mendapatkan</string>
+    <string name="result_suffix">liter bensin</string>
+    <string name="tentang_aplikasi">Tentang Aplikasi</string>
+    <string name="kembali">Kembali</string>
+    <string name="bagikan">Bagikan</string>
+    <string name="bagikan_template">Berat badan: %1$s kg\nTinggi badan: %2$s cm\n Jenis Kelamin: %3$s\n\n BMI: %4.2f\n%5$s</string>
+    <string name="copyright">Hitung BMI merupakan sebuah apliksi Android untuk menghitung body mass index (BMI) sehingga seseorang dapat mengetahui apaka berat badanya ideal, gemuk atau kurus.\n\nAplikasi ini dibuat untuk kelas Mobpro 1.\n\n Copyright © 2024 Arfion Rizki Diotama\nAll rights reserved.</string>
+
 </resources>
