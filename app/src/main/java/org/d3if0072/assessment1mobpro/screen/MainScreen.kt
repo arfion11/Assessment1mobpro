@@ -1,5 +1,7 @@
     package org.d3if0072.assessment1mobpro.screen
 
+    import android.content.Context
+    import android.content.Intent
     import android.content.res.Configuration
     import androidx.compose.foundation.layout.Arrangement
     import androidx.compose.foundation.layout.Column
@@ -21,7 +23,6 @@
     import androidx.compose.material3.Scaffold
     import androidx.compose.material3.Text
     import androidx.compose.material3.TextField
-    import androidx.compose.material3.TextFieldDefaults
     import androidx.compose.material3.TopAppBar
     import androidx.compose.material3.TopAppBarDefaults
     import androidx.compose.runtime.Composable
@@ -29,6 +30,7 @@
     import androidx.compose.runtime.mutableIntStateOf
     import androidx.compose.runtime.mutableStateOf
     import androidx.compose.runtime.remember
+    import androidx.compose.runtime.saveable.rememberSaveable
     import androidx.compose.runtime.setValue
     import androidx.compose.ui.Alignment
     import androidx.compose.ui.Modifier
@@ -42,6 +44,7 @@
     import org.d3if0072.assessment1mobpro.R
     import org.d3if0072.assessment1mobpro.navigation.Screen
     import org.d3if0072.assessment1mobpro.ui.theme.Assessment1mobproTheme
+
 
     @OptIn(ExperimentalMaterial3Api::class)
     @Composable
@@ -77,17 +80,19 @@
     fun ScreenContent(modifier: Modifier) {
         val context = LocalContext.current
 
-        var selectedGasType by remember { mutableStateOf(GasType.PERTALITE) }
-        var payment by remember { mutableIntStateOf(0) }
-        var result by remember { mutableIntStateOf(0) }
-        var notificationMessage by remember { mutableStateOf("") }
-        var calculationPerformed by remember { mutableStateOf(false) } // State untuk melacak apakah perhitungan telah dilakukan
+        var selectedGasType by rememberSaveable { mutableStateOf(GasType.PERTALITE) }
+        var payment by rememberSaveable { mutableIntStateOf(0) }
+        var result by rememberSaveable { mutableIntStateOf(0) }
+        var notificationMessage by rememberSaveable { mutableStateOf("") }
+        var calculationPerformed by rememberSaveable { mutableStateOf(false) } // State untuk melacak apakah perhitungan telah dilakukan
 
         Column (
             modifier = Modifier
                 .fillMaxSize()
-                .padding(16.dp),
-            verticalArrangement = Arrangement.spacedBy(16.dp)
+                .padding(80.dp),
+            verticalArrangement = Arrangement.spacedBy(6.dp),
+            horizontalAlignment = Alignment.CenterHorizontally
+
         ){
             Text(stringResource(id = R.string.select_gas_type))
             Spacer(modifier = Modifier.height(8.dp))
@@ -110,11 +115,10 @@
             Button(
                 onClick = {
                     if (payment == 0) {
-                        notificationMessage = "Silakan isi nominal pembayaran"
                     } else {
                         result = calculateGas(selectedGasType, payment)
                         notificationMessage = ""
-                        calculationPerformed = true // Set state calculationPerformed menjadi true ketika perhitungan dilakukan
+                        calculationPerformed = true
                     }
                 }
             ) {
@@ -122,15 +126,28 @@
             }
             Spacer(modifier = Modifier.height(16.dp))
 
-            // Tampilkan output hanya jika perhitungan sudah dilakukan
+
             if (calculationPerformed) {
                 Text(
                     text = notificationMessage,
                     color = Color.Red
                 )
+
+                val gasTypeText = when (selectedGasType) {
+                    GasType.PERTAMAX -> context.getString(R.string.pertamax)
+                    GasType.PERTALITE -> context.getString(R.string.pertalite)
+                }
                 Text(
-                    text = "${stringResource(id = R.string.result_prefix)} $result ${stringResource(id = R.string.result_suffix)}"
+                    text = "${context.getString(R.string.result_prefix)} $result ${context.getString(R.string.result_suffix)} ($gasTypeText)"
                 )
+                Button(
+                    onClick = {
+                        val outputData = "${context.getString(R.string.result_prefix)} $result ${context.getString(R.string.result_suffix)} ($gasTypeText)"
+                        shareOutputData(context, outputData)
+                    }
+                ) {
+                    Text(stringResource(id = R.string.share_button))
+                }
             }
         }
     }
@@ -167,10 +184,22 @@
 
     fun calculateGas(gasType: GasType, payment: Int): Int {
         return when (gasType) {
-            GasType.PERTAMAX -> payment / 11000 // Harga per liter pertamax
-            GasType.PERTALITE -> payment / 9500 // Harga per liter pertalite
+            GasType.PERTAMAX -> payment / 12950 // Harga per liter pertamax
+            GasType.PERTALITE -> payment / 10000 // Harga per liter pertalite
         }
     }
+
+    fun shareOutputData(context: Context, outputData: String) {
+        val sendIntent: Intent = Intent().apply {
+            action = Intent.ACTION_SEND
+            putExtra(Intent.EXTRA_TEXT, outputData)
+            type = "text/plain"
+        }
+
+        val shareIntent = Intent.createChooser(sendIntent, null)
+        context.startActivity(shareIntent)
+    }
+
 
     @Preview(showBackground = true)
     @Preview(uiMode = Configuration.UI_MODE_NIGHT_YES, showBackground = true)
