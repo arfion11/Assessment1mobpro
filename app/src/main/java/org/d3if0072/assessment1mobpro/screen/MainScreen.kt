@@ -29,7 +29,6 @@
     import androidx.compose.runtime.getValue
     import androidx.compose.runtime.mutableIntStateOf
     import androidx.compose.runtime.mutableStateOf
-    import androidx.compose.runtime.remember
     import androidx.compose.runtime.saveable.rememberSaveable
     import androidx.compose.runtime.setValue
     import androidx.compose.ui.Alignment
@@ -59,9 +58,7 @@
                         titleContentColor = MaterialTheme.colorScheme.primary
                     ),
                     actions = {
-                        IconButton(onClick = {
-                            navController.navigate(Screen.About.route)
-                        }) {
+                        IconButton(onClick = { navController.navigate(Screen.About.route)}) {
                             Icon(
                                 imageVector = Icons.Outlined.Info,
                                 contentDescription = stringResource(id = R.string.tentang_aplikasi),

@@ -25,7 +25,7 @@ import org.d3if0072.assessment1mobpro.ui.theme.Assessment1mobproTheme
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AboutScreen(navController: NavHostController) {
-    Scaffold(
+    Scaffold (
         topBar = {
             TopAppBar(
                 navigationIcon = {
@@ -37,21 +37,22 @@ fun AboutScreen(navController: NavHostController) {
                         )
                     }
                 },
-                title = { Text(text = stringResource(id = R.string.tentang_aplikasi))},
+                title = { Text(text = stringResource(id = R.string.tentang_aplikasi)) },
                 colors = TopAppBarDefaults.mediumTopAppBarColors(
                     containerColor = MaterialTheme.colorScheme.primaryContainer,
                     titleContentColor = MaterialTheme.colorScheme.primary
                 )
             )
         }
-    ) {padding ->
-        Text(
-            text = stringResource(R.string.copyright),
-            modifier = Modifier.padding(padding).padding(16.dp)
+    ) { padding ->
+        Text(text = stringResource(id = R.string.copyright),
+            modifier = Modifier
+                .padding(padding)
+                .padding(16.dp)
         )
-
     }
 }
+
 @Preview(showBackground = true)
 @Preview(uiMode = Configuration.UI_MODE_NIGHT_YES, showBackground = true)
 @Composable
