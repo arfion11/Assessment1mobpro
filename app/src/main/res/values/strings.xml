@@ -1,16 +1,16 @@
 <resources>
-    <string name="app_name">Menghitung Liter Bensin</string>
-    <string name="select_gas_type">Pilih jenis bensin:</string>
+    <string name="app_name">Calculating Liters of Gasoline</string>
+    <string name="select_gas_type">Select gasoline type:</string>
     <string name="pertamax">Pertamax</string>
     <string name="pertalite">Pertalite</string>
-    <string name="payment_label">Pembayaran (Rp)</string>
-    <string name="calculate_button">Hitung</string>
-    <string name="result_prefix">Anda mendapatkan</string>
-    <string name="result_suffix">liter bensin</string>
-    <string name="tentang_aplikasi">Tentang Aplikasi</string>
-    <string name="kembali">Kembali</string>
-    <string name="notification_empty_payment">Harus di isi</string>
-    <string name="copyright">Aplikasi ini adalah sebuah kalkulator bensin sederhana yang memungkinkan pengguna untuk menghitung jumlah liter bensin yang dapat dibeli berdasarkan jumlah pembayaran yang mereka masukkan. Dengan aplikasi ini, pengguna dapat memilih jenis bensin yang ingin mereka beli (misalnya, Pertamax atau Pertalite) dan memasukkan jumlah pembayaran dalam rupiah.\n\nAplikasi ini dibuat untuk Assessment 1 Mobpro 1.\n\n Copyright © 2024 Arfion Rizki Diotama\nAll rights reserved.</string>
-    <string name="share_button">Bagikan Hasil</string>
-    <string name="bagikan_template">Bensin: %1$s kg\nBayar: %2$s cm\n\n Total: %4.2f\n%5$s</string>
+    <string name="payment_label">Payment (Rp)</string>
+    <string name="calculate_button">Count</string>
+    <string name="result_prefix">you get</string>
+    <string name="result_suffix">liter of petrol</string>
+    <string name="tentang_aplikasi">About Application</string>
+    <string name="kembali">Back</string>
+    <string name="empty_payment_error">Please enter a valid payment amount.</string>
+    <string name="copyright">This application is a simple petrol calculator that allows users to calculate the number of liters of petrol that can be purchased based on the payment amount they enter. With this application, users can select the type of gasoline they want to buy (for example, Pertamax or Pertalite) and enter the payment amount in rupiah. This application was created for Assessment 1 Mobpro 1. Copyright © 2024 Arfion Rizki Diotama All rights reserved.</string>
+    <string name="share_button">Share Results</string>
+    <string name="bagikan_template">Gasoline: %1$s kg Pay: %2$s cm Total: %4.2f %5$s</string>
 </resources>

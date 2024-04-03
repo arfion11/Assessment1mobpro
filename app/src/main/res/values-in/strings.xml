@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Menghitung Liter Bensin</string>
+    <string name="select_gas_type">Pilih jenis bensin:</string>
+    <string name="pertamax">Pertamax</string>
+    <string name="pertalite">Pertalite</string>
+    <string name="payment_label">Pembayaran (Rp)</string>
+    <string name="calculate_button">Hitung</string>
+    <string name="result_prefix">Anda mendapatkan</string>
+    <string name="result_suffix">liter bensin</string>
+    <string name="tentang_aplikasi">Tentang Aplikasi</string>
+    <string name="kembali">Kembali</string>
+    <string name="empty_payment_error">Silakan masukkan jumlah pembayaran yang valid.</string>
+    <string name="copyright">Aplikasi ini adalah sebuah kalkulator bensin sederhana yang memungkinkan pengguna untuk menghitung jumlah liter bensin yang dapat dibeli berdasarkan jumlah pembayaran yang mereka masukkan. Dengan aplikasi ini, pengguna dapat memilih jenis bensin yang ingin mereka beli (misalnya, Pertamax atau Pertalite) dan memasukkan jumlah pembayaran dalam rupiah. Aplikasi ini dibuat untuk Assessment 1 Mobpro 1. Copyright © 2024 Arfion Rizki Diotama All rights reserved.</string>
+    <string name="share_button">Bagikan Hasil</string>
+    <string name="bagikan_template">Bensin: %1$s kg Bayar: %2$s cm   Total: %4.2f %5$s</string>
+</resources>

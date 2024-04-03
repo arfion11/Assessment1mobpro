@@ -81,7 +81,7 @@
         var payment by rememberSaveable { mutableIntStateOf(0) }
         var result by rememberSaveable { mutableIntStateOf(0) }
         var notificationMessage by rememberSaveable { mutableStateOf("") }
-        var calculationPerformed by rememberSaveable { mutableStateOf(false) } // State untuk melacak apakah perhitungan telah dilakukan
+        var calculationPerformed by rememberSaveable { mutableStateOf(false) }
 
         Column (
             modifier = Modifier
@@ -125,10 +125,12 @@
 
 
             if (calculationPerformed) {
-                Text(
-                    text = notificationMessage,
-                    color = Color.Red
-                )
+                if (notificationMessage.isNotEmpty()) {
+                    Text(
+                        text = notificationMessage,
+                        color = Color.Red
+                    )
+                }
 
                 val gasTypeText = when (selectedGasType) {
                     GasType.PERTAMAX -> context.getString(R.string.pertamax)
